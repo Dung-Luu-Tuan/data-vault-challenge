@@ -1,0 +1,13 @@
+{
+  "name": "data-vault-challenge",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix main-app\" \"npx serve data-vault -p 5174 --cors\" --names \"main-app,vault\" --prefix-colors \"cyan,magenta\"",
+    "install:all": "npm install --prefix main-app",
+    "build": "npm run build --prefix main-app"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

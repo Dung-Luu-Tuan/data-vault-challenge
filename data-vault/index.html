@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Vault</title>
+  <!--
+    Security: this page should only be loaded inside the main-app iframe.
+    No UI is rendered here — it is purely a messaging + storage layer.
+
+    Content-Security-Policy restricts:
+    - Scripts: only self (no inline eval, no remote scripts)
+    - Frame ancestors: only the main-app origin
+  -->
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'none';
+      script-src 'self';
+      frame-ancestors http://localhost:5173;
+    " />
+  <style>
+    body {
+      background: #0f172a;
+      color: #94a3b8;
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 12px;
+    }
+    #status { opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <div id="status">⚙ DataVault — Secure Storage Layer</div>
+
+  <!-- security.js must load before messageRouter.js -->
+  <script src="security.js"></script>
+  <script src="messageRouter.js"></script>
+</body>
+</html>
