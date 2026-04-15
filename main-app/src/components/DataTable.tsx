@@ -210,7 +210,7 @@ export function DataTable({
                     {record.email}
                   </div>
                   <div className="col-cell" style={{ width: '13%' }}>
-                    <span className={`dept-tag dept-${record.department.toLowerCase()}`}>
+                    <span className="dept-tag">
                       {record.department}
                     </span>
                   </div>
